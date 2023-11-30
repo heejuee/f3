@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Album 1</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto'>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    html, body {
+      height: 100%; /* 변경: 전체 화면 높이를 100%로 설정 */
+      margin: 0;
+    }
+
+    body {
+      background-image: url('album_back1.png');
+      background-size: 60% auto;
+      background-position: left top;
+      display: flex;
+      align-items: left;
+      justify-content: center;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 40%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay-content {
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 10px;
+      margin-bottom: 100px;
+      padding: 10px;
+      background-color: transparent;
+      color: white;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    .white-circle {
+      width: 10px;
+      height: 10px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    #goBackButton {
+      margin: 0;
+      margin-top: 10px;
+    }
+
+    #trackListButton, #focusModeButton {
+      margin-bottom: 100px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div><button id="goBackButton" onclick="goBack()">Go Back to Carousel</button></div>
+  <div><button id="trackListButton">
+    <span class="white-circle"></span> TRACK LIST
+  </button></div>
+  <div><button id="focusModeButton">
+    <span class="white-circle"></span> FOCUS MODE
+  </button></div>
+
+
+
+  <div class="overlay">
+    <div class="overlay-content">
+      <audio id="audioPlayer" controls>
+        <source src="Ditch Diggin'.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+      <button onclick="togglePlayPause()">Toggle Play/Pause</button>
+    </div>
+    <div >
+    <p style="color: white; font-size: 16px; text-align: center; font-style: times; line-height: 140%;">Chet Baker was an iconic jazz trumpeter and vocalist known for <br> is lyrical playing and distinctively smooth singing style. Rising to<br> prominence in the 1950s, Baker's trumpet solos showcased a delicate yet <br>emotive approach, while his vocals added a unique charm to his musical repertoire. <br>His enduring influence on the jazz genre solidifies his status <br> as a legendary figure in the history of jazz.</p>
+  </div>
+  </div>
+
+  
+    
+
+
+
+  </div>
+
+  <script>
+    function togglePlayPause() {
+      var audio = document.getElementById('audioPlayer');
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    function goBack() {
+      window.location.href = 'albums.html';
+    }
+  </script>
+
+</body>
+
+</html>
